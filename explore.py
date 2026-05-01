@@ -26,10 +26,6 @@ df["timestamp"] = pd.to_datetime(df["timestamp"]) #convert from utc to standard 
 df = df.sort_values("timestamp")
 df = df.reset_index(drop=True)
 
-#get the most tweeted days 
-#print(df["timestamp"].min())
-#print(df["timestamp"].max())
-#print(df["timestamp"].dt.date.value_counts().head(10))
 
 #regex method to remove artifacts and urls
 def clean_text(txt):
