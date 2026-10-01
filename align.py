@@ -3,16 +3,11 @@ import json
 from datetime import timedelta
 
 tweets = pd.read_csv('data/tweets_clean.csv')
-<<<<<<< Updated upstream
 spy = pd.read_csv('data/spy_clean.csv', skiprows=3, header=None, names=["date", "close", "high", "low", "open", "volume", "daily_returns"])
-=======
-spy = pd.read_csv('data/spy_clean.csv', skiprows=3, header=None, names=["date", "close", "high", "low", "open", "volume", "daily_return"])
->>>>>>> Stashed changes
 
 tweets["timestamp"] = pd.to_datetime(tweets["timestamp"])
 tweets["date"] = tweets["timestamp"].dt.date
 
-<<<<<<< Updated upstream
 spy["date"] = pd.to_datetime(spy["date"])
 spy["date"] = spy["date"].dt.date
 
@@ -34,6 +29,4 @@ mergeddf.to_csv('data/merged.csv', index=False)
 
 merged_cleaned = mergeddf.dropna(subset="text")
 merged_cleaned.to_csv('data/merged_cleaned.csv', index=False)
-=======
-print(tweets.head(10))
->>>>>>> Stashed changes
+
